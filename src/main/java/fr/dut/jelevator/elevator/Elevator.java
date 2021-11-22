@@ -8,7 +8,7 @@ public class Elevator {
     }
     //Time to reach the distance in milliseconds
     public double timeToReach(double distance) {
-        return 0.0; //TODO
+        return timeToMaxSpeed()+timeToStop()+(distance-distanceToMaxSpeed()-distanceToStop())/maxSpeed;
     }
 
     public double getEnergy() {
@@ -22,9 +22,10 @@ public class Elevator {
         return maxSpeed/acceleration;
     }
     public double distanceToStop() {
-        return 0; //TODO
+        double time = timeToStop();
+        return deceleration*time*time/2;
     }
     public double timeToStop() {
-        return 0; //TODO
+        return 0-maxSpeed/deceleration;
     }
 }
