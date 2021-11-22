@@ -1,16 +1,17 @@
 package fr.dut.jelevator.personne;
 
+import fr.dut.jelevator.building.TimeRange;
+
 public class Personne {
 
-    private static int countor;
-
+    private static int counter;
     private int scheduleDown, scheduleUp;
     private final int id;
 
     public Personne(int scheduleDown, int scheduleUp) {
         this.scheduleDown = scheduleDown;
         this.scheduleUp = scheduleUp;
-        this.id = Personne.countor++;
+        this.id = Personne.counter                                                                                                                                                                                                                          ++;
     }
 
     public int getId() {

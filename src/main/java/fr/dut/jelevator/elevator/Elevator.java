@@ -16,4 +16,17 @@ public class Elevator {
     public double getEnergy() {
         return 0; //TODO
     }
+    public double distanceToMaxSpeed() {
+        double time = timeToMaxSpeed();
+        return (acceleration*time*time)/2;
+    }
+    public double timeToMaxSpeed() {
+        return maxSpeed/acceleration;
+    }
+    public double distanceToStop() {
+        return 0; //TODO
+    }
+    public double timeToStop() {
+        return 0; //TODO
+    }
 }
