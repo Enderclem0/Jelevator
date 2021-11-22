@@ -31,8 +31,6 @@ public class Building {
         timeRangesListDown.add(timeRange);
     }
 
-
-
     //Temps en millisecondes
     public double getTimelaps(Elevator elevator, int floor){
 
