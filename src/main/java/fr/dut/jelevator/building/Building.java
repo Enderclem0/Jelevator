@@ -32,13 +32,13 @@ public class Building {
     }
 
     //Temps en millisecondes
-    public double getTimelaps(Elevator elevator, int floor){
+    public double getTimelapsToFloor(Elevator elevator, int floor){
 
         return 0; //TODO
     }
 
 
-    public int getPositionElevator(Elevator elevator){
+    public int getPositionElevatorByTime(Elevator elevator){
 
         return 0; //TODO
     }
