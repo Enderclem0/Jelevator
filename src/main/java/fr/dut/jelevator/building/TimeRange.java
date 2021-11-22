@@ -12,6 +12,7 @@ public class TimeRange {
         this.endHour = endHour;
     }
 
+    //Horaire en millisecondes
     public double getRandomTimelaps(){
         return random.nextInt(startHour, endHour);
     }

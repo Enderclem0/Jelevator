@@ -19,10 +19,12 @@ public class Building {
         this.heightFloor = heightFloor;
     }
 
+    //Temps en millisecondes
     public double getTimelaps(Elevator elevator, int floor){
 
         return 0; //TODO
     }
+
 
     public int getPositionElevator(Elevator elevator){
 
