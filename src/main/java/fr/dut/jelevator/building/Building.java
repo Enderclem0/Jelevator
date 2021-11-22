@@ -19,6 +19,20 @@ public class Building {
         this.heightFloor = heightFloor;
     }
 
+    public double getTimelaps(Elevator elevator, int floor){
+
+        return 0; //TODO
+    }
+
+    public int getPositionElevator(Elevator elevator){
+
+        return 0; //TODO
+    }
+
+    public List<Elevator> getElevatorList() {
+        return elevatorList;
+    }
+
     public int getFloor() {
         return floor;
     }
