@@ -2,15 +2,13 @@ package fr.dut.jelevator.elevator;
 
 public class Elevator {
 
-    private double acceleration, maxSpeed, currentSpeed, width;
+    private double acceleration, maxSpeed, currentSpeed=0,currentHeight=0,deceleration;
 
     public Elevator() {
-
     }
-
-
-    public double getWidth() {
-        return width; //TODO
+    //Time to reach the distance in milliseconds
+    public double timeToReach(double distance) {
+        return 0.0; //TODO
     }
 
     public double getEnergy() {
