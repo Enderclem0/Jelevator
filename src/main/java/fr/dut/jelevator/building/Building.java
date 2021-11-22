@@ -11,13 +11,27 @@ public class Building {
     private final double heightFloor;
     private int resident;
     private final List<Elevator> elevatorList;
+    private final List<TimeRange> timeRangesListUp;
+    private final List<TimeRange> timeRangesListDown;
 
     public Building(int floor, int resident, double heightFloor) {
         this.elevatorList = new ArrayList<>();
+        this.timeRangesListUp = new ArrayList<>();
+        this.timeRangesListDown = new ArrayList<>();
         this.floor = floor;
         this.resident = resident;
         this.heightFloor = heightFloor;
     }
+
+    public void addTimeRangeUp(TimeRange timeRange){
+        timeRangesListUp.add(timeRange);
+    }
+
+    public void addTimeRangeDown(TimeRange timeRange){
+        timeRangesListDown.add(timeRange);
+    }
+
+
 
     //Temps en millisecondes
     public double getTimelaps(Elevator elevator, int floor){
