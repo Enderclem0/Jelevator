@@ -30,9 +30,22 @@ public class Elevator {
     public boolean isEmpty(){
         return personneInElevator.isEmpty();
     }
-
+    public int timeToReachObjective(double objectiveHeight){
+        double oldSpeed = currentSpeed;
+        double oldHeight = currentHeight;
+        double oldObjectiveHeight = this.objectiveHeight;
+        setObjectiveHeight(objectiveHeight);
+        int time = 0;
+        while (isMoving()){
+            move(1);
+        }
+        setObjectiveHeight(oldObjectiveHeight);
+        currentSpeed = oldSpeed;
+        currentHeight = oldHeight;
+        return time;
+    }
     public void move(int TICK_TIME) {
-        if (!isArrived()){
+        if (isMoving()){
             double distance = objectiveHeight - currentHeight;
             boolean up = distance > 0;
             if (currentSpeed < maxSpeed && distance > distanceToStop()) {
@@ -52,8 +65,8 @@ public class Elevator {
     public void setObjectiveHeight(double objectiveHeight) {
         this.objectiveHeight = objectiveHeight;
     }
-    public boolean isArrived() {
-        return currentHeight<=objectiveHeight+0.1||currentHeight>=objectiveHeight-0.1;
+    public boolean isMoving() {
+        return !(currentHeight <= objectiveHeight + 0.1) && !(currentHeight >= objectiveHeight - 0.1);
     }
     private double distanceToStop() {
         return currentSpeed * currentSpeed / deceleration / 2;
