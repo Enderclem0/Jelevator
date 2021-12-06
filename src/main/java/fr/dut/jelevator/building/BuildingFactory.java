@@ -14,7 +14,7 @@ public class BuildingFactory {
         return instance;
     }
 
-    public Building createNewBuilding(){
+    public Building createNewBuilding() {
         return new Building(floor, resident, heightFloor);
     }
 

@@ -1,14 +1,13 @@
 package fr.dut.jelevator.personne;
 
-import fr.dut.jelevator.building.TimeRange;
-
 public class Personne {
 
     private static int counter;
     private final int id;
+    private int scheduleDown, scheduleUp;
 
     public Personne() {
-        this.id = Personne.counter                                                                                                                                                                                                                          ++;
+        this.id = Personne.counter++;
     }
 
     public int getId() {
