@@ -56,7 +56,7 @@ public class Building {
         return elevatorList;
     }
 
-    public int getFloor() {
+    public int getNbFloors() {
         return floor;
     }
 
@@ -68,4 +68,7 @@ public class Building {
         return heightFloor;
     }
 
+    public long getFloor(double currentHeight) {
+        return Math.round(currentHeight / heightFloor);
+    }
 }

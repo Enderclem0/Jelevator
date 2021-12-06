@@ -5,7 +5,6 @@ import fr.dut.jelevator.elevator.Elevator;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 
 import java.util.List;
@@ -27,10 +26,14 @@ public class Controller {
         for (Building building : buildings) {
             gc.setStroke(getRandomBrightColor());
             gc.strokeLine(drawX, 0, drawX, canvas.getHeight());
-            for (int i = 0; i < building.getFloor(); i++) {
+            for (int i = 0; i < building.getNbFloors(); i++) {
                 gc.strokeLine(drawX, i * building.getHeightFloor(), drawX+buildingWidth, i * building.getHeightFloor());
             }
             double elevatorWidth = buildingWidth / building.getElevatorList().size();
+            for (Elevator elevator : building.getElevatorList()) {
+                gc.setStroke(getRandomBrightColor());
+                gc.strokeRect(drawX, building.getFloor(elevator.getCurrentHeight()) * building.getHeightFloor(), elevatorWidth, building.getHeightFloor());
+            }
         }
     }
     public Color getRandomBrightColor() {
