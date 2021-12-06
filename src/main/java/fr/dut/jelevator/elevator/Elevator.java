@@ -1,7 +1,35 @@
 package fr.dut.jelevator.elevator;
 
+import fr.dut.jelevator.personne.Personne;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Elevator {
+
+    private final List<Personne> personneInElevator;
+
     private double acceleration, maxSpeed, currentHeight = 0, deceleration, currentSpeed = 0,objectiveHeight = 0;
+
+    public Elevator() {
+        this.personneInElevator = new ArrayList<>();
+    }
+
+    public void addPersonneInElevator(Personne personne){
+        personneInElevator.add(personne);
+    }
+
+    public void removePersonneInElevator(Personne personne){
+        personneInElevator.remove(personne);
+    }
+
+    public int getPersonneInElevator(){
+        return personneInElevator.size();
+    }
+
+    public boolean isEmpty(){
+        return personneInElevator.isEmpty();
+    }
 
     public void move(int TICK_TIME) {
         if (!isArrived()){

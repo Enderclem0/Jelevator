@@ -15,13 +15,9 @@ public class JelevatorTest {
         int heureFin = 12;
         Elevator elevator = new Elevator();
         building.getElevatorList().add(elevator);
-
-
-
         TimeRange timeRange = new TimeRange(1000*60*heureDebut, 1000*60*heureFin);
 
         Personne personne = new Personne();
-
         building.getPersonneTimeRangeMap().put(personne, timeRange);
     }
 
