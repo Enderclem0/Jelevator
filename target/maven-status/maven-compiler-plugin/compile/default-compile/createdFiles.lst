@@ -1,7 +1,8 @@
 fr\dut\jelevator\building\BuildingFactory.class
 fr\dut\jelevator\building\TimeRange.class
+fr\dut\jelevator\JelevatorTest.class
 fr\dut\jelevator\building\Building.class
 module-info.class
 fr\dut\jelevator\personne\Personne.class
-fr\dut\jelevator\HelloApplication.class
-fr\dut\jelevator\HelloController.class
+fr\dut\jelevator\View.class
+fr\dut\jelevator\Controller.class

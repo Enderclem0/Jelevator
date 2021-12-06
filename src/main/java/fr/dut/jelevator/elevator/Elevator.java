@@ -42,6 +42,9 @@ public class Elevator {
             }
             currentHeight += currentSpeed * TICK_TIME;
         }
+        else {
+            currentSpeed = 0;
+        }
     }
     public double getCurrentHeight() {
         return currentHeight;
