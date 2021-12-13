@@ -71,4 +71,8 @@ public class Building {
     public long getFloor(double currentHeight) {
         return Math.round(currentHeight / heightFloor);
     }
+
+    public double getHeight() {
+        return (floor * heightFloor);
+    }
 }

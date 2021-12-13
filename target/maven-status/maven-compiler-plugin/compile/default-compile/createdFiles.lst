@@ -6,3 +6,4 @@ module-info.class
 fr\dut\jelevator\personne\Personne.class
 fr\dut\jelevator\View.class
 fr\dut\jelevator\Controller.class
+fr\dut\jelevator\elevator\Elevator.class
