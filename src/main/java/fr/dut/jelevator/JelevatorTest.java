@@ -9,8 +9,7 @@ import fr.dut.jelevator.personne.Personne;
 public class JelevatorTest {
 
     public static void main(String[] args) {
-        BuildingFactory buildingFactory = new BuildingFactory();
-        Building building = buildingFactory.setResident(20).setFloor(5).setHeightFloor(4).createNewBuilding();
+        Building building = BuildingFactory.getInstance().setResident(20).setFloor(5).setHeightFloor(4).createNewBuilding();
         int heureDebut = 10;
         int heureFin = 12;
         Elevator elevator = new Elevator();

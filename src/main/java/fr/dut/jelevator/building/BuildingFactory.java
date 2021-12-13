@@ -4,13 +4,15 @@ public class BuildingFactory {
 
     private int floor, resident;
     private double heightFloor;
-    private BuildingFactory instance;
+    private static BuildingFactory instance;
 
-    public BuildingFactory() {
-        this.instance = this;
+    private BuildingFactory() {
     }
 
-    public BuildingFactory getInstance() {
+    public static BuildingFactory getInstance() {
+        if (instance == null) {
+            instance = new BuildingFactory();
+        }
         return instance;
     }
 
