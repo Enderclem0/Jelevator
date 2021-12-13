@@ -19,5 +19,13 @@ public class View extends Application {
         stage.setTitle("Elevator");
         stage.setScene(scene);
         stage.show();
+        while (true) {
+            try {
+                Thread.sleep(10);
+                Controller.drawScene(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

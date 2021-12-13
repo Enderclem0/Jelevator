@@ -15,19 +15,16 @@ import static fr.dut.jelevator.building.BuildingFactory.getInstance;
 
 public class Controller {
     @FXML
-    private Canvas canvas;
-    private GraphicsContext gc;
-    private List<Building> buildings;
-    private int drawX = 0;
-    public void initialize() {
+    private static Canvas canvas;
+    private static GraphicsContext gc;
+    private static List<Building> buildings = new ArrayList<>();;
+    private static int drawX = 0;
+    public void initialize(){
         gc = canvas.getGraphicsContext2D();
-        buildings = new ArrayList<>();
         buildings.add(getInstance().setFloor(5).setHeightFloor(10).setResident(20).createNewBuilding());
         buildings.add(getInstance().setFloor(5).setHeightFloor(5).setResident(20).createNewBuilding());
-        drawScene(10);
-
     }
-    public void drawScene(int margin) {
+    public static void drawScene(int margin) {
         drawX = margin;
         int lineWidth = 5;
         OptionalDouble oMaxHeight = buildings.stream().mapToDouble(Building::getHeight).max();
@@ -44,15 +41,14 @@ public class Controller {
             System.out.println("drawing building : \n");
             System.out.println("x : " + drawX + " y : " + (canvas.getHeight() - building.getHeight() * yUnit));
             System.out.println("width : " + xUnit + " height : " + building.getHeight() * yUnit);
-            gc.rect(drawX, canvas.getHeight() - building.getHeight() * yUnit, xUnit, building.getHeight() * yUnit);
-            gc.stroke();
+            gc.fillRect(drawX, canvas.getHeight() - building.getHeight() * yUnit, xUnit, building.getHeight() * yUnit);
             drawX += xUnit + margin;
         });
     }
-    public void drawElevator(Elevator elevator) {
+    public static void drawElevator(Elevator elevator) {
 
     }
-    public Color getRandomBrightColor() {
+    public static Color getRandomBrightColor() {
         ThreadLocalRandom random = ThreadLocalRandom.current();
         Color rand = Color.hsb(random.nextInt(360), 0.75, 1);
         System.out.println("Random color:"+rand+"\n");
