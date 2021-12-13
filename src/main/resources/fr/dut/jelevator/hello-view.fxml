@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.*?>
 
 <?import javafx.scene.canvas.Canvas?>
-<BorderPane fx:controller="fr.dut.jelevator.Controller" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
-    <Canvas fx:id="canvas">
-    </Canvas>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.dut.jelevator.Controller">
+   <center>
+      <Canvas height="200.0" fx:id="canvas" width="200.0" BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>

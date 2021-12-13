@@ -12,7 +12,7 @@ public class Building {
 
     private final int floor;
     private final double heightFloor;
-    private int resident;
+    private final int resident;
     private final List<Elevator> elevatorList;
     private final List<TimeRange> timeRangesListUp;
     private final List<TimeRange> timeRangesListDown;
@@ -38,18 +38,6 @@ public class Building {
 
     public Map<Personne, TimeRange> getPersonneTimeRangeMap() {
         return personneTimeRangeMap;
-    }
-
-    //Temps en millisecondes
-    public double getTimelapsToFloor(Elevator elevator, int floor){
-
-        return 0; //TODO
-    }
-
-
-    public int getPositionElevatorByTime(Elevator elevator){
-
-        return 0; //TODO
     }
 
     public List<Elevator> getElevatorList() {

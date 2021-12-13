@@ -59,6 +59,7 @@ public class Elevator {
             currentSpeed = 0;
         }
     }
+
     public double getCurrentHeight() {
         return currentHeight;
     }
