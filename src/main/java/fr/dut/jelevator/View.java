@@ -16,16 +16,11 @@ public class View extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(View.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Controller controller = fxmlLoader.getController();
         stage.setTitle("Elevator");
         stage.setScene(scene);
         stage.show();
-        while (true) {
-            try {
-                Thread.sleep(10);
-                Controller.drawScene(10);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+        GameLoop gameLoop = new GameLoop(controller);
+        gameLoop.start();
     }
 }

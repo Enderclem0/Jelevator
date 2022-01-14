@@ -12,9 +12,9 @@ public class JelevatorTest {
         Building building = BuildingFactory.getInstance().setResident(20).setFloor(5).setHeightFloor(4).createNewBuilding();
         int heureDebut = 10;
         int heureFin = 12;
-        Elevator elevator = new Elevator();
+        Elevator elevator = new Elevator(1.5, 3.0, 1.5);
         building.getElevatorList().add(elevator);
-        TimeRange timeRange = new TimeRange(1000*60*heureDebut, 1000*60*heureFin);
+        TimeRange timeRange = new TimeRange(1000 * 60 * heureDebut, 1000 * 60 * heureFin);
 
         Personne personne = new Personne();
         building.getPersonneTimeRangeMap().put(personne, timeRange);

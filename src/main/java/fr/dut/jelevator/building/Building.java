@@ -1,7 +1,9 @@
 package fr.dut.jelevator.building;
 
+import fr.dut.jelevator.Controller;
 import fr.dut.jelevator.elevator.Elevator;
 import fr.dut.jelevator.personne.Personne;
+import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,6 +19,7 @@ public class Building {
     private final List<TimeRange> timeRangesListUp;
     private final List<TimeRange> timeRangesListDown;
     private final Map<Personne, TimeRange> personneTimeRangeMap;
+    private final Color color = Controller.getRandomBrightColor();
 
     public Building(int floor, int resident, double heightFloor) {
         this.elevatorList = new ArrayList<>();
@@ -28,11 +31,19 @@ public class Building {
         this.heightFloor = heightFloor;
     }
 
-    public void addTimeRangeUp(TimeRange timeRange){
+    public Color getColor() {
+        return color;
+    }
+
+    public void addElevator(Elevator elevator) {
+        this.elevatorList.add(elevator);
+    }
+
+    public void addTimeRangeUp(TimeRange timeRange) {
         timeRangesListUp.add(timeRange);
     }
 
-    public void addTimeRangeDown(TimeRange timeRange){
+    public void addTimeRangeDown(TimeRange timeRange) {
         timeRangesListDown.add(timeRange);
     }
 
@@ -62,5 +73,18 @@ public class Building {
 
     public double getHeight() {
         return (floor * heightFloor);
+    }
+
+    @Override
+    public String toString() {
+        return "Building{" +
+                "floor=" + floor +
+                ", heightFloor=" + heightFloor +
+                ", resident=" + resident +
+                ", elevatorList=" + elevatorList +
+                ", timeRangesListUp=" + timeRangesListUp +
+                ", timeRangesListDown=" + timeRangesListDown +
+                ", personneTimeRangeMap=" + personneTimeRangeMap +
+                '}';
     }
 }

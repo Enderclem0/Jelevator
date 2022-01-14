@@ -2,9 +2,9 @@ package fr.dut.jelevator.building;
 
 public class BuildingFactory {
 
+    private static BuildingFactory instance;
     private int floor, resident;
     private double heightFloor;
-    private static BuildingFactory instance;
 
     private BuildingFactory() {
     }
